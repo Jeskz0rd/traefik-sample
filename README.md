@@ -27,3 +27,21 @@ I developed this solution to be used as a reverse proxy guide. There's a lot of 
 ### Sample application
 
 `docker-compose -f app.yml up -d`
+
+### Connectivity test
+
+`curl -i -H "Host: jeskz0rd.example" http://127.0.0.1`
+
+`curl -i -H "Host: jeskz0rd.example" --insecure https://127.0.0.1`
+
+`curl -i -H "Host: www.jeskz0rd.example" http://127.0.0.1`
+
+`curl -i -H "Host: www.jeskz0rd.example" --insecure https://127.0.0.1`
+
+### Finish test
+
+`docker-compose -f traefik.yml down`
+
+`docker-compose -f app.yml down`
+
+`docker network rm proxy`
