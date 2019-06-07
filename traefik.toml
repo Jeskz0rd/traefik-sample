@@ -1,0 +1,26 @@
+#debug = true
+
+defaultEntryPoints = ["http", "https"]
+
+[web]
+  address = ":8080"
+
+[entryPoints]
+  [entryPoints.http]
+    address = ":80"
+    [entryPoints.http.redirect]
+      entryPoint = "https"
+    [entryPoints.https]
+      address = ":443"
+      [entryPoints.https.tls]
+
+[acme]
+  email = "jeferson.pereira@jeskz0rd.example"
+  storage = "/acme/acme.json"
+  entryPoint = "https"
+  OnHostRule = true
+
+[docker]
+  endpoint = "unix:///var/run/docker.sock"
+  exposedbydefault = false
+  watch = true
