@@ -13,3 +13,17 @@ I developed this solution to be used as a reverse proxy guide. There's a lot of 
 > NOT RECOMMENDED FOR PRODUCTION
 >
 > NOT SUITABLE FOR PRODUCTION
+
+## TL;DR
+
+### Proxy network setup
+
+`docker network create proxy --attachable`
+
+### Traefik proxy setup
+
+`docker-compose -f traefik.yml up -d`
+
+### Sample application
+
+`docker-compose -f app.yml up -d`
